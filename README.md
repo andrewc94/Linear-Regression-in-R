@@ -22,15 +22,13 @@ We will be working with the cars dataset. We will first load the data and see wh
 data(cars)
 View(cars)
 ```
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/cars.png)
-
-![Alt](https://github.com/nicklyz/R-Studio-Tutorial/raw/master/img/479435_orig.png)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/cars.png)
 
 We now want to visualize the data to see if we can get an understanding of how it is structured.
 
 `plot(dist~speed, data=cars)`
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/2dcar_plot.png)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/2dcar_plot.png)
 
 Looking at the data, it seems that there seems to be a linear relationship between the speed and stopping distance of cars. For a quantitative measure of how well the data correlates, we can check the pearson and spearman correlation of the data:
 
@@ -46,7 +44,7 @@ We now have a trained linear model that predicts the stopping distance of a car 
 
 `abline(model, col="red")`
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/2dcar_model_plot.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/2dcar_model_plot.png?raw=true)
 
 To view additional details of the model, use the `summary()` command:
 
@@ -54,13 +52,13 @@ To view additional details of the model, use the `summary()` command:
 
 The output should look something like this:
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/lm_call.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/lm_call.png?raw=true)
 
 The summary provides lots of data on the model such as the R squared and adjusted R squared values, the F statistic, and the p-value and is a valuable tool for evaluating the model. Since p < 0.05, we can reject the null hypothesis. We can also view other information such as the error sum of squares and mean sum of squares through the `anova()` command.
 
 `anova(model)`
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/anova.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/anova.png?raw=true)
 
 To demonstrate the capabilities of R, we can also easily calculate relevant values on our own. For instance the following code will produce the SSE, SST, estimated variance, R^2, and adjusted R^2 values. Note that we can use our model to make predictions using the `predict()` command.
 
@@ -92,7 +90,7 @@ cars2["speed^2"] <- cars$speed^2
 View(cars2)
 ```
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/cars2.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/cars2.png?raw=true)
 
 Now we can train our model using different training and test sets. The following lines of code randomly sample the data we have and splits it into a training set with 80% of the data and a test set with 20% of the data.
 
@@ -121,7 +119,7 @@ To visualize the data in 3d:
 cars2plot <- scatterplot3d(cars2_train$speed, cars2_train$`speed^2`, cars2_train$dist, angle=45)
 ```
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/3dcar_plot.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/3dcar_plot.png?raw=true)
 
 We can also draw our regression plane:
 
@@ -129,7 +127,7 @@ We can also draw our regression plane:
 cars2plot$plane3d(model2)
 ```
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/3dcar_model_plot.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/3dcar_model_plot.png?raw=true)
 
 We can view further information about our new model as before with the `summary()` and `anove()` commands. Predicitions are also made similarly with the `predict()` command.
 
@@ -145,11 +143,11 @@ cor(state)
 step(lm(`Life Exp`~Murder, data=state), direction="both", scope=~Population+Income+Murder+Illiteracy+Area+Frost+`HS Grad`)
 ```
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/state.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/state.png?raw=true)
 
 The work is done with the `step()` command which evaluates models based on the Akaike Information Criterion (AIC) which measures the likelihood of a model and thus can be used for model evaluation. We begin the process by checking the correlation between all independent variables and the dependent variable, Life Expectancy. We include in the scope of the search all fields given to us. The `step()` command will then add and remove parameters in search of a model with the lowest AIC score. The output of the above step command can be seen here:
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/stepwise.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/stepwise.png?raw=true)
 
 In terms of code, logistic regression is very similar to linear regression. We first select our data - in this case, none of the builtin datasets were suitable so we use one online: (http://www.ats.ucla.edu/stat/data/binary.csv). We then use the `glm()` command to train our model and the rest is analysis! One point to note is that the rank column needs to be converted to a categorical variable to be treated properly.
 
@@ -161,9 +159,9 @@ admissionsModel <- glm(admit ~ gre + gpa + rank, data = admissions, family = "bi
 summary(admissionsModel)
 ```
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/admission.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/admission.png?raw=true)
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/logistic.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/logistic.png?raw=true)
 
 ### References
 (http://r-statistics.co/Linear-Regression.html)
