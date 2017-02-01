@@ -60,6 +60,14 @@ The summary provides lots of data on the model such as the R squared and adjuste
 
 ![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/anova.png?raw=true)
 
+Additionally, we can graphically analyze the statistical properties of our model.
+
+```
+plot(model)
+```
+
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/raw/master/images/residualvsfitted.png?raw=true)
+
 To demonstrate the capabilities of R, we can also easily calculate relevant values on our own. For instance the following code will produce the SSE, SST, estimated variance, R^2, and adjusted R^2 values. Note that we can use our model to make predictions using the `predict()` command.
 
 ```
