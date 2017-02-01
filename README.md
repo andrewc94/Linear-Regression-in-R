@@ -21,6 +21,8 @@ We will be working with the cars dataset. We will first load the data and see wh
 data(cars)
 View(cars)
 ```
+![Alt text](/images/cars.png?raw=true)
+
 We now want to visualize the data to see if we can get an understanding of how it is structured.
 
 `plot(dist~speed, data=cars)`
@@ -84,7 +86,10 @@ First, we will extend our dataset:
 ```
 cars2 <- cars
 cars2["speed^2"] <- cars$speed^2
+View(cars2)
 ```
+
+![Alt text](/images/cars2.png?raw=true)
 
 Now we can train our model using different training and test sets. The following lines of code randomly sample the data we have and splits it into a training set with 80% of the data and a test set with 20% of the data.
 
@@ -137,11 +142,11 @@ cor(state)
 step(lm(`Life Exp`~Murder, data=state), direction="both", scope=~Population+Income+Murder+Illiteracy+Area+Frost+`HS Grad`)
 ```
 
-STATE PIC HERE
+![Alt text](/images/state.png?raw=true)
 
 The work is done with the `step()` command which evaluates models based on the Akaike Information Criterion (AIC) which measures the likelihood of a model and thus can be used for model evaluation. We begin the process by checking the correlation between all independent variables and the dependent variable, Life Expectancy. We include in the scope of the search all fields given to us. The `step()` command will then add and remove parameters in search of a model with the lowest AIC score. The output of the above step command can be seen here:
 
-STEP PIC HERE
+![Alt text](/images/stepwise.png?raw=true)
 
 In terms of code, logistic regression is very similar to linear regression. We first select our data - in this case, none of the builtin datasets were suitable so we use one online: http://www.ats.ucla.edu/stat/data/binary.csv. We then use the `glm()` command to train our model and the rest is analysis! One point to note is that the rank column needs to be converted to a categorical variable to be treated properly.
 
@@ -152,6 +157,10 @@ admissions$rank <- factor(admissions$rank)
 admissionsModel <- glm(admit ~ gre + gpa + rank, data = admissions, family = "binomial")
 summary(admissionsModel)
 ```
+
+![Alt text](/images/admissions.png?raw=true)
+
+![Alt text](/images/logistic.png?raw=true)
 
 ### References
 http://r-statistics.co/Linear-Regression.html
