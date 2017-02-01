@@ -1,8 +1,8 @@
 # Linear-Regression-in-R
+
 ## CS239 Demo by Andrew Chen
 
 Note: The previous demo on R Studio basics can be found at: (https://nicklyz.github.io/R-Studio-Tutorial/). This demo is self contained and does not need completion of the previous demo, but it may help provide background knowledge.
-
 
 ### Setup:
 
@@ -22,7 +22,9 @@ We will be working with the cars dataset. We will first load the data and see wh
 data(cars)
 View(cars)
 ```
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/2dcar_model_plot.png)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/cars.png)
+
+![Alt](https://github.com/nicklyz/R-Studio-Tutorial/raw/master/img/479435_orig.png)
 
 We now want to visualize the data to see if we can get an understanding of how it is structured.
 
@@ -159,7 +161,7 @@ admissionsModel <- glm(admit ~ gre + gpa + rank, data = admissions, family = "bi
 summary(admissionsModel)
 ```
 
-![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/admissions.png?raw=true)
+![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/admission.png?raw=true)
 
 ![Alt](https://github.com/andrewc94/Linear-Regression-in-R/blob/master/images/logistic.png?raw=true)
 
